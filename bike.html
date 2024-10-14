@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Bike Details">
+        <div class="slds-grid slds-wrap">
+            <!-- Division 1: Image -->
+            <div class="slds-col slds-size_1-of-2">
+                <template if:true={bike.Image__c}>
+                    <img src={bike.Image__c} alt={bike.Name} style="width:200px;height:auto;" />
+                </template>
+                <template if:false={bike.Image__c}>
+                    <p>No image available</p>
+                </template>
+            </div>
+
+            <!-- Division 2: Bike Details -->
+            <div class="slds-col slds-size_1-of-2">
+                <p><strong>Bike Name:</strong> {bike.Name}</p>
+                <p><strong>Brand:</strong> {bike.Brand__c}</p>
+                <p><strong>Modal:</strong> {bike.Modal__c}</p>
+                <p><strong>Price:</strong> {bike.Price__c}</p>
+                <p><strong>Specifications:</strong> {bike.Specifications__c}</p>
+            </div>
+        </div>
+    </lightning-card>
+</template>
